@@ -1,0 +1,36 @@
+.AppContainer{
+   display: flex;
+   align-items: center;
+   flex-direction: column;
+   
+}
+
+.registerContainer{
+  padding: 10px 20px;
+  border: 3 px solid ;
+  border-radius: 5px;
+  margin-top: 20px;
+  
+}
+
+.registerTitle{ 
+  text-align: center;
+  margin-bottom: 20px;
+  font-family: monospace;
+  color: white;
+}
+
+
+.registerInput{
+  display: block;
+  padding: 7px 0;
+  margin: 10px auto;
+  color: white;
+
+}
+
+.registerButton{
+  padding: 2px 5px;
+  color: white;
+
+}
