@@ -1,6 +1,7 @@
 const express = require("express")
 const app = express();
 const mysql = require("mysql");
+const cors  = require("cors");
 
 const db = mysql.createPool({
     host:"localhost",
@@ -11,15 +12,25 @@ const db = mysql.createPool({
 
 });
 
-app.get("/", (req, res) =>{
-    console.log("irei executar essa buçanha")
-    let SQL =
-        "INSERT INTO tabela(nome, cost, category) VALUES ('Feijao', '20.0', 'ALIMENTO')";
-        db.query(SQL, (err, result) =>{
+app.use(cors());
+app.use(express.json());
+
+app.post("/register", (req, res ) => {
+    const {nome} = req.body;
+    const {cost} = req.body;
+    const {category} = req.body;
+    //console.log(nome);
+
+        let SQL = "INSERT INTO tabela(nome, cost, category) VALUES (?, ?, ?)";
+
+        db.query(SQL, [nome, cost, category], (err, result) =>{
             console.log(err);
+
         });
-});
+    });
+
+
 
 app.listen(3001, () => (
-    console.log("rodando servidor")
+    console.log("rodadndo servidor")
 ));
