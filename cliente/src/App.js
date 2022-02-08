@@ -1,5 +1,6 @@
 import react, {useState} from 'react';
 import './App.css';
+import  Axios  from "axios";
 
 function App() {
 const [values, setValues] = useState();
@@ -14,17 +15,24 @@ const handleChangeValues = (value) =>{
 };
 
 const handleClickButton = () =>{
+  Axios.post("http://localhost:3001/register", {
 
-  console.log(values)
+    nome: values.nome,
+    cost: values.cost,
+    category: values.category,
+  }).then((response) =>{
+
+    console.log(response);
+  });
 };
 
   return (
     <div className="AppContainer">
       <div className='registerContainer'> 
-      <h1 className="registerTitle"> Loja sei la</h1>
+      <h1 className="registerTitle"> Mercadinho</h1>
       <input
       type="text"
-      name="name"
+      name="nome"
       placeholder="nome"
       className="registerInput"
       onChange={handleChangeValues}
