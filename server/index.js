@@ -32,5 +32,5 @@ app.post("/register", (req, res ) => {
 
 
 app.listen(3001, () => (
-    console.log("rodadndo servidor")
+    console.log("rodando servidor")
 ));
