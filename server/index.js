@@ -6,7 +6,7 @@ const cors  = require("cors");
 const db = mysql.createPool({
     host:"localhost",
     user:"root",
-    password:"root",
+    password:"",
     database:"crud",
     port:"3306",
 
@@ -21,13 +21,13 @@ app.post("/register", (req, res ) => {
     const {category} = req.body;
     //console.log(nome);
 
-        let SQL = "INSERT INTO tabela(nome, cost, category) VALUES (?, ?, ?)";
+    let SQL = "INSERT INTO tabela(nome, cost, category) VALUES (?, ?, ?)";
 
-        db.query(SQL, [nome, cost, category], (err, result) =>{
-            console.log(err);
+    db.query(SQL, [nome, cost, category], (err, result) =>{
+        console.log(err);
 
-        });
     });
+});
 
 
 
