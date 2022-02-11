@@ -1,7 +1,14 @@
+body{
+  background-color: rgb(148, 145, 145);
+
+}
+
+
 .AppContainer{
    display: flex;
    align-items: center;
    flex-direction: column;
+   border: 2px solid;
    
 }
 
@@ -10,6 +17,7 @@
   border: 3 px solid ;
   border-radius: 5px;
   margin-top: 20px;
+  background-color:#E1DAD2 ;
   
 }
 
@@ -17,7 +25,9 @@
   text-align: center;
   margin-bottom: 20px;
   font-family: monospace;
-  color: white;
+  color: #F2EFEB;
+  
+  
 }
 
 
@@ -25,12 +35,17 @@
   display: block;
   padding: 7px 0;
   margin: 10px auto;
+  background-color: transparent;
+  border:none;
   color: white;
+  
 
 }
 
 .registerButton{
   padding: 2px 5px;
-  color: white;
+  border:none;
+  background-color: #F2EFEB;
+  
 
 }

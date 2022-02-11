@@ -1,9 +1,11 @@
-import react, {useState} from 'react';
+import react, {useState, useEffect} from 'react';
 import './App.css';
 import  Axios  from "axios";
+import Items from './components/arquive';
 
 function App() {
 const [values, setValues] = useState();
+const [ListItems, setListItems] = useState();
 
 const handleChangeValues = (value) =>{
   setValues((prevValue) => ({
@@ -25,6 +27,14 @@ const handleClickButton = () =>{
     console.log(response);
   });
 };
+
+  useEffect (() => {
+    Axios.get("http://localhost:3001/getItems").then((response) => {
+      setListItems(response.data);
+    });
+  }, []);
+
+
 
   return (
     <div className="AppContainer">
@@ -54,6 +64,18 @@ const handleClickButton = () =>{
       <button className="registerButton" onClick={() => handleClickButton()}
       >Cadastrar</button>
       </div>
+      {typeof ListItems !== "undefined" && ListItems.map((value) => {
+        return ( 
+        <Items key= {value.id}
+        ListItem = {ListItems}
+        setListItem = {setListItems}
+        id = {value.id}
+        nome = {value.nome}
+        cost = {value.cost}
+        category = {value.category}
+        ></Items>
+        ); 
+        })}
       
     </div>
   );
