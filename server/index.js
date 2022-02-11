@@ -16,9 +16,8 @@ app.use(cors());
 app.use(express.json());
 
 app.post("/register", (req, res ) => {
-    const {nome} = req.body;
-    const {cost} = req.body;
-    const {category} = req.body;
+    const {nome, cost, category} = req.body;
+    
     //console.log(nome);
 
         let SQL = "INSERT INTO tabela(nome, cost, category) VALUES (?, ?, ?)";
@@ -30,7 +29,18 @@ app.post("/register", (req, res ) => {
     });
 
 
+app.get("/getItems", (req, res) => {
+    let SQL = "SELECT * FROM tabela";
+    
+    db.query(SQL, (err, result) => {
+        if(err) console.log(err);
+        else res.send(result);
+
+    });
+});
+
+
 
 app.listen(3001, () => (
-    console.log("rodando servidor")
+    console.log("rodadndo servidor")
 ));
