@@ -1,0 +1,26 @@
+.itemContainer{
+    
+  
+width: 200px;
+margin: 20px 0 10px 0;
+padding: 5px;
+cursor: pointer;
+color: aliceblue;
+border: none ;
+border-radius: 10px;
+background-color: rgba(65, 63, 61, 20);
+
+}
+.itemContainer:hover{
+    background-color: rgb(65, 63, 61);
+
+}
+
+.itemTitle{
+font-family: 'Courier New', Courier, monospace;
+
+
+}
+.cardCategory{
+    margin-top: 5px;
+}
