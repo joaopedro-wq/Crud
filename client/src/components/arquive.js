@@ -26,8 +26,7 @@ export default function Items(props){
         />
         <div className="itemContainer" onClick={ () => handleClickItems ()}>
         <h1 className="itemTitle" >{props.nome}</h1>
-        <p className="itemCost">{props.cost}</p>
-        <p className="itemCategory">{props.category}</p>
+        
 
     </div>
     </>
