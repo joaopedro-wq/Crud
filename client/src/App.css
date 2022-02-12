@@ -1,51 +1,57 @@
-body{
-  background-color: rgb(148, 145, 145);
-
-}
 
 
 .AppContainer{
    display: flex;
    align-items: center;
+   justify-content: center;
    flex-direction: column;
-   border: 2px solid;
+   background-color: none;
+   height: 15vh;
    
-}
+   }
 
+.registerTitle{ 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #F2EFEB;
+  font-family: Cambria, arial;
+  background-color: cornflowerblue;
+  padding: 50pxs;
+  height:10vh;
+  
+}
 .registerContainer{
-  padding: 10px 20px;
+  padding: 50px 20px;
   border: 3 px solid ;
   border-radius: 5px;
   margin-top: 20px;
-  background-color:#E1DAD2 ;
-  
-}
+  background-color: none;
 
-.registerTitle{ 
-  text-align: center;
-  margin-bottom: 20px;
-  font-family: monospace;
-  color: #F2EFEB;
-  
   
 }
 
 
 .registerInput{
-  display: block;
-  padding: 7px 0;
-  margin: 10px auto;
-  background-color: transparent;
-  border:none;
-  color: white;
-  
+  display: flex;
+  padding: 10px;
+  margin-bottom: 30px;
+  border: 1px solid cornflowerblue;
+  border-radius: 20px;
+  outline: unset;
+}
+.registerInput:focus, textarea:focus{
+  background-color:wheat ;
 
 }
 
 .registerButton{
-  padding: 2px 5px;
-  border:none;
-  background-color: #F2EFEB;
+  padding: 7px 65px;
+  border: 1px solid;
+  border-radius: 20px;
+  background-color: cornflowerblue;
+  cursor: pointer;
+  color: #F2EFEB;
   
-
 }
+
