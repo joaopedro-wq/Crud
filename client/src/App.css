@@ -45,7 +45,19 @@
 
 }
 
+
 .registerButton{
+
+  padding: 7px 65px;
+  border: 1px solid;
+  border-radius: 20px;
+  background-color: cornflowerblue;
+  cursor: pointer;
+  color: #F2EFEB;
+
+}
+
+.ButtonCadastro {
   padding: 7px 65px;
   border: 1px solid;
   border-radius: 20px;
@@ -54,4 +66,15 @@
   color: #F2EFEB;
   
 }
+
+.ButtonLista{
+  padding: 7px 65px;
+  border: 1px solid;
+  border-radius: 20px;
+  background-color: cornflowerblue;
+  cursor: pointer;
+  color: #F2EFEB;
+  
+}
+
 
