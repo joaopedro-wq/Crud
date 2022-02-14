@@ -10,46 +10,22 @@ import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 import Button from '@mui/material/Button';
 import ButtonGroup from '@mui/material/ButtonGroup';
-import  Dialog  from "../components/dialog";
-import axios from "axios";
 
 
-function Listagem(props){
+
+
+function Listagem(){
     
-    const [ListItems, setListItems] = useState();
+    const [listItems, setListItems] = useState();
     
     useEffect (() => {
         Axios.get("http://localhost:3001/getItems").then((response) => {
         setListItems(response.data);
         });
     }, []);
-    const [editValues, setEditValues] = useState({
-        id: props.id,
-        nome: props.nome,
-        cost: props.cost,
-        category: props.category,
-    });
     
-    const handleEditItem = () =>{
-        Axios.put("http://localhost:3001/editItem",{
-        id: editValues.id,
-        nome: editValues.nome,
-        cost: editValues.cost,
-        category: editValues.category,
-    });
-};
 
 
-
-
-    
-    function deletePost (id) {
-            Axios.delete(`http://localhost:3001/editItem/
-            ${id}`)
-
-    };
-    
-    
     
     return (
         <div>
@@ -66,10 +42,10 @@ function Listagem(props){
         </TableRow>
         </TableHead>
         <TableBody>       
-        {typeof ListItems !== "undefined" && ListItems.map((value) => (
+        {typeof listItems !== "undefined" && listItems.map((value) => (
             <TableRow
             key={value.idTabela}
-            ListItem = {ListItems}
+            listItem = {listItems}
             
             
             sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
@@ -82,8 +58,8 @@ function Listagem(props){
             <TableCell align="center">{value.category}</TableCell>
             <TableCell align="right">
                 <ButtonGroup variant="contained" aria-label="outlined primary button group">
-                <Button  >Editar</Button>
-                <Button onClick={() => deletePost(value.idTabela)} color="error" variant="outlined"  >Excluir</Button>
+                <Button href="http://localhost:3000/main/" >Editar</Button>
+                <Button  color="error" variant="outlined"  >Excluir</Button>
         </ButtonGroup>
     </TableCell>
             </TableRow>
@@ -91,10 +67,11 @@ function Listagem(props){
         </TableBody>
     </Table>
     </TableContainer>  
+   
     </div>
 
-
-        );
+    
+)
     
     };
 
