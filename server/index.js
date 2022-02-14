@@ -27,7 +27,19 @@ app.post("/register", (req, res ) => {
 
         });
     });
+    
+    app.put("/editItem", (req, res) => {
+        const {idTabela, nome, cost, category} = req.body; 
+        let SQL = "UPDATE tabela nome =?, cost = ?, category = ? where idTabela = ?";
+    
+        db.query (SQL, [ nome, cost, category, idTabela], (err, result) => {
+        if(err) console.log(err)
+        else res.send(result);
+        
+        });
 
+    });
+    
 
 app.get("/getItems", (req, res) => {
     let SQL = "SELECT * FROM tabela";
@@ -38,6 +50,7 @@ app.get("/getItems", (req, res) => {
 
     });
 });
+
 
 
 
