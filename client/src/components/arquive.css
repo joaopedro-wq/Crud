@@ -2,7 +2,7 @@
     
 width: 150px;
 margin: 20px ;
-padding: 5px;
+padding: none;
 cursor: pointer;
 color: aliceblue;
 border: 1px solid cornflowerblue;
@@ -10,7 +10,6 @@ border-radius: 20px;
 background-color: cornflowerblue;
 }
 
-.itemTitle{
-font-family: Cambria, Arial;
 
-}
+
+
