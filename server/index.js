@@ -15,7 +15,9 @@ const db = mysql.createPool({
 app.use(cors());
 app.use(express.json());
 
+
 app.post("/register", (req, res ) => {
+  
     const {nome, cost, category} = req.body;
     
     //console.log(nome);
@@ -32,6 +34,7 @@ app.post("/register", (req, res ) => {
   
 
     app.put("/editItem", (req, res) => {
+      
         const { idTabela } = req.body;
         const { nome } = req.body;
         const { cost } = req.body;
@@ -47,14 +50,27 @@ app.post("/register", (req, res ) => {
       });
     
 
-app.get("/getItems", (req, res) => {
-    let SQL = "SELECT * FROM tabela";
+app.get("/getItems/:idTabela", (req, res) => {
+    const idTabela = req.params.idTabela;
+    console.log(idTabela);
+    let SQL = "SELECT * from tabela WHERE idTabela = "+idTabela;
     
     db.query(SQL, (err, result) => {
         if(err) console.log(err);
         else res.send(result);
 
     });
+});
+
+app.get("/getItems/", (req, res) => {
+  
+  let SQL = "SELECT * from tabela  ";
+  
+  db.query(SQL, (err, result) => {
+      if(err) console.log(err);
+      else res.send(result);
+
+  });
 });
 
 
