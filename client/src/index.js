@@ -18,7 +18,7 @@ render(
     
         
     <Route path="/" element= {<App />}/>
-    <Route path="listagem" element= {<Listagem />}/>
+    <Route path="listagem/" element= {<Listagem />}/>
     <Route path="Main" element= {<Main />}/>
     <Route path="Cadastro" element= {<Cadastro />}/>
 

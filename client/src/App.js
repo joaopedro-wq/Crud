@@ -36,7 +36,7 @@ const handleClickButton = () =>{
           </h2> </div>
       </div>
       
-        <Link className='ButtonLista' to="/listagem">listagem</Link> 
+        <Link className='ButtonLista' to="/listagem/">listagem</Link> 
         <Link  className='ButtonCadastro' to="/cadastro">cadastro</Link>
       
         
