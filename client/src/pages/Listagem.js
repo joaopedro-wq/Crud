@@ -19,14 +19,10 @@ function Listagem(){
     const [listItems, setListItems] = useState();
     
     useEffect (() => {
-        Axios.get("http://localhost:3001/getItems").then((response) => {
+        Axios.get("http://localhost:3001/getItems/").then((response) => {
         setListItems(response.data);
         });
     }, []);
-    
-
-
-    
     return (
         <div>
             
@@ -46,8 +42,6 @@ function Listagem(){
             <TableRow
             key={value.idTabela}
             listItem = {listItems}
-            
-            
             sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
             >
             <TableCell component="th" scope="row">
@@ -59,7 +53,7 @@ function Listagem(){
             <TableCell align="right">
                 <ButtonGroup variant="contained" aria-label="outlined primary button group">
                 <Button href="http://localhost:3000/main/" >Editar</Button>
-                <Button  color="error" variant="outlined"  >Excluir</Button>
+                <Button color="error" variant="outlined"  >Excluir</Button>
         </ButtonGroup>
     </TableCell>
             </TableRow>
